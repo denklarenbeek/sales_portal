@@ -1,0 +1,105 @@
+//General styling
+* {
+  color: $primary-color;
+}
+
+input {
+  outline: 0 !important;
+  color: $primary-color !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: none;
+}
+
+//BUTTON STYLING
+.btn-bb {
+  text-align: center;
+  background-color: #fc3;
+  color: #002f49;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: 0;
+  border: 1px solid #DFB432;
+  padding: 8px 15px;
+}
+
+//Header styling
+.navbar {
+  height: 60px;
+  border-top: 1px solid $secondary-color;
+  border-bottom: 1px solid #D2D2D2;
+  margin: 0;
+}
+
+.navbar-header {
+
+  & a {
+    padding-top: 10px;
+  }
+
+  & img {
+    padding: 0;
+    width: 50px;
+  }
+
+  & p {
+    font-size: 20px;
+    color: $primary-color !important;
+  }
+
+}
+
+.navbar-nav {
+
+  & a {
+    color: $nav-color !important;
+    font-size: 11px;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  & a:hover {
+    color: $primary-color !important;
+  }
+
+  & p {
+    display: inline-block;
+    font-size: 14px;
+    color: $nav-color !important;
+    vertical-align: middle;
+
+  }
+
+  & i {
+    color: $nav-color !important;
+    font-size: 2.5em;
+    margin-right: 10px;
+  }
+
+  .new-customer {
+    margin-left: 3px;
+    font-size: 12px;
+  }
+
+  .active {
+    color: $primary-color !important;
+
+    i {
+      color: $primary-color !important;
+    }
+
+    p {
+      color: $primary-color !important;
+    }
+  }
+}
+
+//CONTAINER STYLING
+.container {
+  background: $background-color;
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+}

@@ -1,0 +1,90 @@
+<div id="tab1" class="tab-customer-info">
+  <div class="customer-info">
+    <div class="customer-info-person">
+      <h2>Persoons gegevens</h2>
+      <div class="customer-info-person-salution form-group">
+        <div class="customer-info-person-salution-title">
+          <p>Aanhef:</p>
+        </div>
+        <div class="customer-info-person-salution-group">
+          <label ng-hide="editing" for="">{{customer.salution}}</label>
+          <select ng-show="editing" ng-model="customer.salution">
+            <option value="De heer">Dhr.</option>
+            <option value="Mevrouw">Mevr.</option>
+          </select>
+        </div>
+      </div>
+      <div class="customer-info-person-lastname form-group">
+        <div class="customer-info-person-lastname-title">
+          <p>Achternaam:</p>
+        </div>
+        <div class="customer-info-person-lastname-group">
+          <label ng-hide="editing" for="surname">{{customer.lastname}}</label>
+          <input ng-show="editing" ng-model="customer.lastname"class="form-control" for="surname" type="text">
+        </div>
+      </div>
+      <div class="customer-info-person-firstname form-group">
+        <div class="customer-info-person-firstname-title">
+          <p>Voornaam:</p>
+        </div>
+        <div class="customer-info-person-firstname-group">
+          <label ng-hide="editing" for="first_name">{{customer.firstname}}</label>
+          <input ng-show="editing" ng-model="customer.firstname" class="form-control" for="first_name" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="customer-info-location">
+      <h2>Locatie gegevens</h2>
+      <div class="customer-info-location-company form-group">
+        <div class="customer-info-location-company-title">
+          <p class="">Bedrijfsnaam:</p>
+        </div>
+        <div class="customer-info-location-company-group">
+          <label ng-hide="editing" for="company_name">{{customer.company}}</label>
+          <input ng-show="editing" ng-model="customer.company" class="form-control" for="company_name" type="text">
+        </div>
+      </div>
+      <div class="customer-info-location-street form-group">
+        <div class="customer-info-location-street-title">
+          <p>Straatnaam:</p>
+        </div>
+        <div class="customer-info-location-street-group">
+          <label ng-hide="editing" for="company_street">{{customer.street}}</label>
+          <input ng-show="editing" ng-model="customer.street" class="form-control" for="company_street" type="text">
+        </div>
+      </div>
+      <div class="customer-info-location-zippcode form-group">
+        <div class="customer-info-location-zippcode-title">
+          <p>Postcode:</p>
+        </div>
+        <div class="customer-info-location-zippcode-group">
+          <label ng-hide="editing" for="company_zip">{{customer.zippcode}}</label>
+          <input ng-show="editing" ng-model="customer.zippcode" class="form-control" for="company_zip" type="text">
+        </div>
+      </div>
+      <div class="customer-info-location-city form-group">
+        <div class="customer-info-location-city-title">
+          <p>Plaatsnaam:</p>
+        </div>
+        <div class="customer-info-location-zippcode-group">
+          <label ng-hide="editing" for="company_city">{{customer.city}}</label>
+          <input ng-show="editing" ng-model="customer.city" class="form-control" for="company_city" type="text">
+        </div>
+      </div>
+      <div class="customer-info-location-distance form-group">
+        <div class="customer-info-location-distance-title">
+          <p>Afstand:</p>
+        </div>
+        <div class="customer-info-location-distance-group form-group">
+          <label ng-hide="editing" for="company_distance">{{customer.distance}}</label>
+          <select ng-show="editing" ng-model="customer.distance">
+            <option value="<20km"><20km</option>
+            <option value="20 - 60km">20-60km</option>
+            <option value="60 - 100km">60-100km</option>
+            <option value=">100km">>100km</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

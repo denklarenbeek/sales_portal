@@ -1,0 +1,243 @@
+<DOCTYPE <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sales Portal | BigBrother |</title>
+
+  <!-- bootstrap css -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- stylesheet to customize site -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body ng-app="salesPortal">
+	<header class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand"><img alt="brand" src="img/bb_logo.png"></a>
+				<p class="navbar-text">Sales Portal</p>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+        <li>
+					<a class="" href="index.html">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<p class="">Home</p>
+					</a>
+				</li>
+				<li>
+					<a class="active" href="customer.html">
+						<i class="fa fa-user active" aria-hidden="true"></i>
+						<p class="active">Customer<i class="fa fa-plus-square-o new-customer active" aria-hidden="true"></i></p>
+					</a>
+				</li>
+        <li>
+					<a href="">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+						<p>Admin</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fa fa-question" aria-hidden="true"></i>
+						<p>Help</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="container" ng-controller="titleController">
+		<div class="content-title">
+			<a href="index.html"><i class="fa fa-angle-left arrow-back" aria-hidden="true"></i></a>
+			<h2>{{newLocation.company}} <h3>| {{newLocation.city}}</h3></h2>
+			<button class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Verwijder locatie</button>
+			<button class="btn-bb new-customer" ng-click="saveLocation(newLocation.lastname, newLocation.firstname)"><i class="fa fa-floppy-o" aria-hidden="true"></i>Bewaar locatie</button>
+		</div>
+		<div class="navigation-tabs">
+			<div class="navigation-tabs-tab active" data-id="1">
+				<p>Gegevens</p>
+			</div>
+			<div class="navigation-tabs-tab" data-id="2">
+				<p>Offerte</p>
+			</div>
+			<div class="navigation-tabs-tab" data-id="3">
+				<p>Onderhoud</p>
+			</div>
+			<div class="navigation-tabs-tab" data-id="4">
+				<p>Inventarisatie</p>
+			</div>
+		</div>
+		<div class="container-content">
+		  <div id="tab1" class="tab-customer-info showTab">
+		    <div class="customer-info">
+		      <div class="customer-info-person">
+		        <h2>Persoons gegevens</h2>
+		        <div class="customer-info-person-salution form-group">
+		          <label for="aanhef">Aanhef:</label>
+		          <div class="form-group">
+		            <label class="radio-inline"><input type="radio" name="aanhef" value="heer" ng-model="newLocation.salution">Dhr.</label>
+		            <label class="radio-inline"><input type="radio" name="aanhef" value="mevrouw">Mevr.</label>
+		          </div>
+		        </div>
+		        <div class="customer-info-person-lastname form-group">
+		          <div class="customer-info-person-lastname-title">
+		            <p>Achternaam:</p>
+		          </div>
+		          <div class="customer-info-person-lastname-group">
+		            <label for="surname">{{lastname}}</label>
+		            <input class="form-control" for="surname" type="text" ng-model="newLocation.lastname">
+		          </div>
+		        </div>
+		        <div class="customer-info-person-firstname form-group">
+		          <div class="customer-info-person-firstname-title">
+		            <p>Voornaam:</p>
+		          </div>
+		          <div class="customer-info-person-firstname-group">
+		            <label for="first_name"></label>
+		            <input class="form-control" for="first_name" type="text" ng-model="newLocation.firstname">
+		          </div>
+		        </div>
+		      </div>
+		      <div class="customer-info-location">
+		        <h2>Locatie gegevens</h2>
+		        <div class="customer-info-location-company form-group">
+		          <div class="customer-info-location-company-title">
+		            <p class="">Bedrijfsnaam:</p>
+		          </div>
+		          <div class="customer-info-location-company-group">
+		            <label for="company_name"></label>
+		            <input ng-model="newLocation.company" class="form-control" for="company_name" type="text">
+		          </div>
+		        </div>
+		        <div class="customer-info-location-street form-group">
+		          <div class="customer-info-location-street-title">
+		            <p>Straatnaam:</p>
+		          </div>
+		          <div class="customer-info-location-street-group">
+		            <label for="company_street"></label>
+		            <input ng-model="newLocation.street" class="form-control" for="company_street" type="text">
+		          </div>
+		        </div>
+		        <div class="customer-info-location-zippcode form-group">
+		          <div class="customer-info-location-zippcode-title">
+		            <p>Postcode:</p>
+		          </div>
+		          <div class="customer-info-location-zippcode-group">
+		            <label for="company_zip"></label>
+		            <input ng-model="newLocation.zippcode" class="form-control" for="company_zip" type="text">
+		          </div>
+		        </div>
+		        <div class="customer-info-location-city form-group">
+		          <div class="customer-info-location-city-title">
+		            <p>Plaatsnaam:</p>
+		          </div>
+		          <div class="customer-info-location-zippcode-group">
+		            <label for="company_city"></label>
+		            <input ng-model="newLocation.city" class="form-control" for="company_city" type="text">
+		          </div>
+		        </div>
+		        <div class="customer-info-location-distance form-group">
+		          <div class="customer-info-location-distance-title">
+		            <p>Afstand:</p>
+		          </div>
+		          <div class="customer-info-location-distance-group form-group">
+		            <input ng-model="newLocation.distance" type="radio" name="distance" value="20">
+		            <label for="company_distance"><20km</label>
+		            <input ng-model="newLocation.distance" type="radio" name="distance" value="20-60">
+		            <label for="company_distance">20 - 60km</label>
+		            <input ng-model="newLocation.distance" type="radio" name="distance" value="60-100">
+		            <label for="company_distance">60-100km</label>
+		            <input ng-model="newLocation.distance" type="radio" name="distance" value="100">
+		            <label for="company_distance">>100km</label>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+			<div id="tab2" class="tab tab-offer-info showTab" ng-controller="offerController" >
+				<div class="offer-info">
+				  <div class="offer-info-pumpwatch">
+						<h2>PumpWatch en toebehoren</h2>
+						<table class="offer-info-pumpwatch-table">
+		          <thead>
+		            <tr>
+		              <th>PumpWatch type</th>
+		              <th>Aantal Analoog</th>
+		              <th>Aantaal IP</th>
+		              <th>
+		                <button class="btn-bb" ng-click="newPumpwatch()" ><i class="fa fa-plus-square-o"></i></button>
+		              </th>
+		            </tr>
+		          </thead>
+	          	<tbody>
+	              <tr ng-repeat="pumpwatch in locations.pumpwatch">
+	                <td>
+	                  <select class="form-control" name="pumpwatch-type" ng-options="" ng-model="newLocation.pumpwatch_type">
+	                    <option>PumpWatch type</option>
+	                  </select>
+	                </td>
+	                <td ng-if="">
+	                  <select class="form-control" name="quantity-analog" ng-options="" ng-model="newLocation.analog">>
+	                    <option>Aantal analoog</option>
+	                  </select>
+	                </td>
+	                <td ng-if="">
+	                  <select class="form-control" name="quantity-ip" ng-options="" ng-model="newLocation.ip">>
+	                    <option>Aantal IP</option>
+	                  </select>
+	                </td>
+	                <td>
+	                  <div class="btn-group table-buttons">
+	                    <a class="btn btn-success"><i class="fa fa-floppy-o"></i></a>
+	                    <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+	                    <a class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+	                  </div>
+	                </td>
+	              </tr>
+							</tbody>
+		        </table>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Slimme modules</h2>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Slimme producten</h2>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Slimme diensten</h2>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Camera's en toebehoren</h2>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Installatiekosten (excl. bekabeling)</h2>
+					</div>
+					<div class="offer-info-pumpwatch">
+						<h2>Bekabelingskosten</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Global variables -->
+	<script>var template = 'pages/customer-information.html'</script>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/vendor/jquery-3.1.1.js"></script>
+  <!-- Bootstrap -->
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+  <!-- Angular -->
+  <script type="text/javascript" src="js/vendor/angular.js"></script>
+
+	<!-- Custom JavaScript files -->
+	<script type="text/javascript" src="js/jqCustom.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

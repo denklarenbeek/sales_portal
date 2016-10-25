@@ -1,0 +1,53 @@
+<DOCTYPE <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sales Portal | BigBrother |</title>
+
+  <!-- bootstrap css -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- stylesheet to customize site -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body ng-app="salesPortal">
+
+	<!-- Include the header -->
+	<ng-include src="'partials/header.html'"></ng-include>
+
+	<!-- Include the template -->
+	<div ng-view class="container"></div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script type="text/javascript" src="js/vendor/jquery-3.1.1.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+  <!-- Angular -->
+  <script type="text/javascript" src="js/vendor/angular.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-route.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-resource.js"></script>
+
+	<!-- Main App file -->
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/jqCustom.js"></script>
+
+	<!-- Angular controllers -->
+	<script type="text/javascript" src="js/controllers/locationid.js"></script>
+	<script type="text/javascript" src="js/controllers/locations.js"></script>
+	<script type="text/javascript" src="js/controllers/filter.js"></script>
+	<script type="text/javascript" src="js/controllers/searchController.js"></script>
+	<script type="text/javascript" src="js/controllers/offer.js"></script>
+	<script type="text/javascript" src="js/jqCustom.js"></script>
+
+
+	<!-- Angular Services -->
+	<script type="text/javascript" src="js/services/dataServices.js"></script>
+</body>
+</html>

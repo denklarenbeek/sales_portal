@@ -1,0 +1,45 @@
+<div id="tab2" class="tab-offer-info" ng-controller="offerController" >
+  <div class="offer-info">
+    <div class="offer-info-pumpwatch">
+      <h2>PumpWatch en toebehoren</h2>
+      <table class="offer-info-pumpwatch-table">
+        <thead>
+          <tr>
+            <th>PumpWatch type</th>
+            <th>Aantal Analoog</th>
+            <th>Aantaal IP</th>
+            <th>
+              <button class="btn-bb" ><i class="fa fa-plus-square-o"></i></button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="pumpwatch in customer.documents.pumpwatch">
+            <td>
+              <select class="form-control" name="pumpwatch-type" ng-options="" ng-model="newLocation.pumpwatch_type">
+                <option>PumpWatch type</option>
+              </select>
+            </td>
+            <td ng-if="">
+              <select class="form-control" name="quantity-analog" ng-options="" ng-model="newLocation.analog">>
+                <option>Aantal analoog</option>
+              </select>
+            </td>
+            <td ng-if="">
+              <select class="form-control" name="quantity-ip" ng-options="" ng-model="newLocation.ip">>
+                <option>Aantal IP</option>
+              </select>
+            </td>
+            <td>
+              <div class="btn-group table-buttons">
+                <a class="btn btn-success"><i class="fa fa-floppy-o"></i></a>
+                <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

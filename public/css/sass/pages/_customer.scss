@@ -1,0 +1,227 @@
+//HEADER STYLING
+.content-title {
+
+  //HEADER ARROW STYLING
+  .arrow-back {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  //NEW AND DELETE BUTTON STYLING
+  .new-customer {
+    right: 180px;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  //HEADER TITLE STYLING
+  h2 {
+    display: inline-block;
+  }
+
+  //HEADER LOCATION STYLING
+  h3 {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 200;
+  }
+}
+
+//NAVIGATION TABS STYLING
+.navigation-tabs {
+  padding-top: 14px;
+  padding-left: $container-padding;
+  background: white;
+  height: 50px;
+
+  &-tab {
+    display: inline-block;
+    cursor: pointer;
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: $fourth-color;
+      border-right: 1px solid $fourth-color;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    //LAST NAV TAB NO BORDER
+    &:last-of-type {
+      p {
+        border-right: none;
+      }
+    }
+  }
+
+  //ACTIVE TAB STYLING
+  .active {
+    border-bottom: 3px solid $primary-color;
+    color: $primary-color;
+
+    p {
+      color: $primary-color;
+    }
+  }
+}
+
+//CONTAINER-CONTENT STYLING
+.container-content {
+  h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+.showTab {
+  display: block;
+}
+
+.tab {
+  display: none;
+}
+
+//CUSTOMER BLOCK STYLING
+.customer-info {
+  padding-top: 14px;
+  padding-left: $container-padding;
+
+  //STYLE THE INPUT FIELDS
+  input[type="radio"] {
+    background-color: white;
+    width: 15px; /*Desired width*/
+    height: 15px; /*Desired height*/
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: 3px;
+    border: 1px solid #D2D2D2;
+    box-shadow: 0 1px 1px #D2D2D2;
+    //STYLE WHEN RADIO BUTTON IS CHECKED
+    &:checked {
+      background: $secondary-color;
+    }
+  }
+
+  //STYLE TEXT INPUT
+  input[type="text"] {
+    height: 40px;
+    border: 1px solid #D2D2D2;
+    border-radius: 0;
+    box-shadow: 0 1px 1px #D2D2D2;
+  }
+
+  select {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #D2D2D2;
+    border-radius: 0;
+    box-shadow: 0 1px 1px #D2D2D2;
+    background: white;
+    padding-left: 12px;
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  //STYLE THE PERSON DIV
+  &-person {
+    width: 40%;
+    float: left;
+    margin-right: 5%;
+
+    div {
+
+      div {
+        //STYLE THE TITLE DIVS
+        &:first-of-type {
+          display: inline-block;
+          width: 100px;
+          font-size: 16px;
+          margin-right: 20px;
+        }
+        //STYLE THE GROUP DIVS
+        &:last-of-type {
+          width: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  //STYLE THE LOCATION DIV
+  &-location {
+    width: 40%;
+    float: left;
+    margin-right: 10%;
+
+    label {
+      margin-right: 1px;
+    }
+
+    div {
+
+      div {
+        //STYLE THE TITLE DIVS
+        &:first-of-type {
+          display: inline-block;
+          width: 100px;
+          font-size: 16px;
+          margin-right: 20px;
+        }
+        //STYLE THE GROUP DIVS
+        &:last-of-type {
+          width: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+//STYLING OFFERTE SECTION
+.offer-info {
+  padding-left: $container-padding;
+
+  &-pumpwatch {
+
+    &-table {
+
+      th {
+        font-size: 14px;
+        font-weight: normal;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 1px solid $primary-color;
+
+        &:first-child{
+          padding-left: 0;
+        }
+
+        &:nth-last-child(-n+2) {
+          border-right: none;
+        }
+
+      }
+
+    }
+
+
+  }
+
+}

@@ -1,0 +1,48 @@
+.content-title {
+  position: relative;
+}
+
+.content-title a {
+  position: absolute;
+  top: -5px;
+  left: 30px;
+  font-size: 40px;
+  color: #002f49;
+}
+
+.customer-tabs {
+  padding-left: 60px;
+  background: white;
+  cursor: pointer;
+}
+
+
+.customer-tabs div {
+  display: inline-block;
+}
+
+.customer-tabs div.active {
+  border-bottom: 2px solid #002f49;
+}
+
+.customer-tabs p {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 200;
+  font-size: 16px;
+  border-right: 1px solid #8B9BA8;
+  color: #8B9BA8;
+}
+
+.customer-tabs div.active p {
+  color: #002f49;
+}
+
+.customer-tabs-name {
+  cursor: pointer;
+}
+
+.customer-tabs-name:last-of-type p {
+  border-right: none;
+}
