@@ -1,11 +1,12 @@
 <div class="content-title">
   <h2>Home</h2>
+  <button ng-click="newLocation(); editing = true" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Nieuwe locatie</button>
 </div>
 <div ng-class="{'search-bar-focus': searchFocus === 'active'}" class="search-bar">
   <i class="fa fa-search" aria-hidden="true"></i>
   <input ng-model="search" ng-click="searchFocus = 'active'" ng-blur="searchFocus = 'none'" class="search-bar-input active" placeholder="Zoek voor klanten">
 </div>
-<div class="content" ng-controller="locationIDCtrl">
+<div class="content">
   <div ng-repeat="location in locations | filter:search" class="content-customers">
     <div class="content-customers-block">
       <a ng-href="#/locations/{{location._id}}">

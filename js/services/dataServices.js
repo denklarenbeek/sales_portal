@@ -22,15 +22,11 @@ app.factory('dataServices', function($http) {
       })
     },
     post: function(data) {
-      return $http({
-        method: "POST",
-        url: url,
-        data: data
-      })
+      return $http.post(url, data, null);
     },
     put: function(id, data) {
       var new_url = url + '/' + id;
-      return $http.put(new_url, data, null)
+      return $http.put(new_url, data, null);
     },
     remove: function(id) {
       return $http({
