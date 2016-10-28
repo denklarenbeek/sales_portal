@@ -2,6 +2,7 @@
 
 var app = angular.module('salesPortal');
 
+// var url = 'http://localhost:5000/locations';
 var url = 'https://bbsalesapi.herokuapp.com/locations';
 
 app.factory('dataServices', function($http) {
@@ -20,24 +21,16 @@ app.factory('dataServices', function($http) {
         url:  url + '/' + id
       })
     },
-    post: function(id) {
+    post: function(data) {
       return $http({
         method: "POST",
         url: url,
-        data: {}
+        data: data
       })
     },
     put: function(id, data) {
-      return $http({
-        method: "PUT",
-        url:  url + '/' + id,
-        headers: {
-          "Access-Control-Allow-Origin": "http://localhost:8080/",
-          "Access-Control-Allow-Headers":  "Origin, X-Requested-With, Content-Type, Accept",
-          "Content-Type": "application/json charset=UTF-8"
-        },
-        data: data
-      })
+      var new_url = url + '/' + id;
+      return $http.put(new_url, data, null)
     },
     remove: function(id) {
       return $http({
