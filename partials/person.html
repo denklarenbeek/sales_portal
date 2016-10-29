@@ -1,4 +1,4 @@
-<div id="tab1" class="tab-customer-info">
+<div id="tab1" class="tab-customer-info" ng-controller="geoLocationCtrl">
   <div class="customer-info">
     <div class="customer-info-person">
       <h2>Persoons gegevens</h2>
@@ -66,9 +66,18 @@
         <div class="customer-info-location-city-title">
           <p>Plaatsnaam:</p>
         </div>
-        <div class="customer-info-location-zippcode-group">
+        <div class="customer-info-location-city-group">
           <label ng-hide="editing" for="company_city">{{customer.city}}</label>
           <input ng-show="editing" ng-model="customer.city" class="form-control" for="company_city" type="text">
+        </div>
+      </div>
+      <div class="customer-info-location-gps form-group">
+        <div class="customer-info-location-city-title">
+          <p>GPS location:</p>
+        </div>
+        <div class="customer-info-location-gps-group">
+          <button ng-click="geoLocation()" class="btn-bb">Get GPS location</button>
+          <button ng-click="calculateDistance()" class="btn-bb">Calculate Distance</button>
         </div>
       </div>
       <div class="customer-info-location-distance form-group">
