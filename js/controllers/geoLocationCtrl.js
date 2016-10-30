@@ -2,7 +2,7 @@
 
 var app = angular.module('salesPortal');
 
-app.controller('geoLocationCtrl', function($scope, findLocationService, $http) {
+app.controller('geoLocationCtrl', function($scope, mapsApiServices, $http) {
 
   var apikey = "AIzaSyA-EC5gPzIkrIyN6O9W-zmV6KVAlOD-8Pw";
 
@@ -26,18 +26,7 @@ app.controller('geoLocationCtrl', function($scope, findLocationService, $http) {
 
   $scope.calculateDistance = function() {
 
-    //Variables to request
-    var url = 'https://maps.googleapis.com/maps/api/distancematrix/';
-    var type = 'json';
-    var units = 'units=metric';
-    var start = 'origins=52.027145,5.6338212';
-    var end = 'destinations=' + $scope.latitude + "," + $scope.longitude;
-    // var end = 'destinations=52.0379049,5.6612124';
-    var key = 'key=' + apikey;
-    var requestUrl = url + type + '?' + units + '&' + start + '&' + end + '&' + key;
-
-    //Get request to API Maps to get distance back
-    $http.get(requestUrl).then(function successCallback(response){
+    mapsApiServices.calcDistance('json', 'metric', 52.027145, 5.6338212, $scope.latitude, $scope.longitude).then(function(response){
       var distance = response.data.rows[0].elements[0].distance.value
       if(distance <= 20000)  {
         $scope.customer.distance = "<20km";
@@ -49,8 +38,8 @@ app.controller('geoLocationCtrl', function($scope, findLocationService, $http) {
         $scope.customer.distance = ">100km";
       }
       console.log(distance);
-    });
-    console.log(requestUrl);
-  }
+    })
+  };
+
 
 });
