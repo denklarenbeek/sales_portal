@@ -98,8 +98,19 @@ input {
 .container {
   background: $background-color;
   height: 100%;
+  position: relative;
 }
 
 .container-fluid {
   height: 100%;
+}
+
+//Alert messages
+.alert {
+  padding-left: $container-padding;
+  strong {
+    color: #a94442;
+  }
+
+
 }
