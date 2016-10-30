@@ -69,8 +69,12 @@ input {
 
 .alert {
   padding-left: 95px; }
-  .alert strong {
-    color: #a94442; }
+
+.alert-success strong {
+  color: #3c763d; }
+
+.alert-danger strong {
+  color: #a94442; }
 
 .container {
   width: 100%;

@@ -2,7 +2,7 @@
 
 var app = angular.module('salesPortal');
 
-app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServices, $location, $rootScope) {
+app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServices, $location, $rootScope, alertMessServices) {
 
   var id = $routeParams.id;
 
@@ -15,8 +15,13 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
   //PUT the information
   $scope.saveLocation = function(id, customerData) {
     dataServices.put(id, customerData).then(function successCallback(response) {
-      console.log(customerData);
-      $rootScope.editing = false;
+      if(response.status = 200) {
+        var message = response.config.data.company + " is bijgewerkt";
+        alertMessServices.success(message, '.container-content');
+        console.log(response);
+        $rootScope.editing = false;
+      }
+
     })
   };
 

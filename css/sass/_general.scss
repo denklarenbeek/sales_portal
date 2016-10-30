@@ -108,9 +108,16 @@ input {
 //Alert messages
 .alert {
   padding-left: $container-padding;
+}
+
+.alert-success {
+  strong {
+    color: #3c763d;
+  }
+}
+
+.alert-danger {
   strong {
     color: #a94442;
   }
-
-
 }
