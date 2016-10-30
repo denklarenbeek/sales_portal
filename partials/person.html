@@ -71,13 +71,13 @@
           <input ng-show="editing" ng-model="customer.city" class="form-control" for="company_city" type="text">
         </div>
       </div>
-      <div class="customer-info-location-gps form-group">
+      <div ng-show="editing" class="customer-info-location-gps form-group">
         <div class="customer-info-location-city-title">
-          <p>GPS location:</p>
+          <p>Bereken afstand:</p>
         </div>
         <div class="customer-info-location-gps-group">
-          <button ng-click="geoLocation()" class="btn-bb">Get GPS location</button>
-          <button ng-click="calculateDistance()" class="btn-bb">Calculate Distance</button>
+          <button ng-click="calcGpsDistance()" class="btn-bb"><i class="fa fa-calculator" aria-hidden="true"></i> GPS</button>
+          <button ng-click="calcInfoDistance()" class="btn-bb"><i class="fa fa-calculator" aria-hidden="true"></i> Info</button>
         </div>
       </div>
       <div class="customer-info-location-distance form-group">
@@ -92,6 +92,7 @@
             <option value="60 - 100km">60-100km</option>
             <option value=">100km">>100km</option>
           </select>
+          <button ng-show="editing" class="btn-bb"><i class="fa fa-calculator" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>

@@ -263,6 +263,9 @@ input {
   .customer-info label {
     font-size: 18px;
     font-weight: normal; }
+  .customer-info .customer-info-location-distance-group select {
+    width: 75%;
+    margin-right: 9px; }
   .customer-info-person {
     width: 40%;
     float: left;

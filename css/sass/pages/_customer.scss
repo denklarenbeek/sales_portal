@@ -140,6 +140,13 @@
     font-weight: normal;
   }
 
+  .customer-info-location-distance-group {
+    select {
+      width: 75%;
+      margin-right: 9px;
+    }
+  }
+
   //STYLE THE PERSON DIV
   &-person {
     width: 40%;

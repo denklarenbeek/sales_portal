@@ -15,6 +15,7 @@ app.factory('mapsApiServices', function($http) {
       var requestUrl = url + type + '?' + units + '&' + start + '&' + end + '&' + apikey;
       console.log(requestUrl);
       return $http.get(requestUrl);
+
     }
   };
 });
