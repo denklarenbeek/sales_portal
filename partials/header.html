@@ -1,4 +1,4 @@
-<header class="navbar navbar-default" role="navigation" ng-init="selectedNav = 'home'">
+<header class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="#" class="navbar-brand"><img alt="brand" src="img/bb_logo.png"></a>
@@ -11,7 +11,7 @@
           <p>Home</p>
         </a>
       </li>
-      <li ng-click="selectedNav = 'customer'; newLocation()">
+      <li ng-click="selectedNav = 'customer'">
         <a ng-class="{'active': selectedNav === 'customer'}" href="#/locations">
           <i class="fa fa-user" aria-hidden="true"></i>
           <p>Customer<i class="fa fa-plus-square-o new-customer" aria-hidden="true"></i></p>

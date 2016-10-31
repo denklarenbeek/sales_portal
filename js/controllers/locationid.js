@@ -5,6 +5,7 @@ var app = angular.module('salesPortal');
 app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServices, $location, $rootScope, alertMessServices) {
 
   var id = $routeParams.id;
+  $scope.selectedNav = "customer"
 
   //GET the database information
     dataServices.get(id)

@@ -38,7 +38,7 @@ app.controller('geoLocationCtrl', function($scope, mapsApiServices, $http, alert
 
   $scope.calcInfoDistance = function() {
     if($scope.customer.street === undefined || $scope.customer.city === undefined) {
-      alert("Please fill in the street and/or city");
+      alertMessServices.error('Please fill in the street and/or address', '.container-content');
     } else {
         mapsApiServices.calcDistance('json', 'metric', 52.027145, 5.6338212, $scope.customer.street, $scope.customer.city).then(function(response){
           if(response.data.rows[0].elements[0].status === "NOT_FOUND") {
