@@ -107,7 +107,17 @@ input {
 
 //Alert messages
 .alert {
-  padding-left: $container-padding;
+  position: absolute;
+  right: 10px;
+  top: 20%;
+  width: 250px;
+  height: 75px;
+  padding: 15px;
+}
+
+.alertbox {
+  padding: 20px;
+  margin-bottom: 5px;
 }
 
 .alert-success {
