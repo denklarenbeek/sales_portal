@@ -6,22 +6,20 @@ app.factory('alertMessServices', function($http) {
 
   return {
     success: function(message, position) {
-      var successMessage = '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button><strong>Success!</strong> ' + message + '</div>'
-      $(position).prepend(successMessage);
+      var successMessage = '<div class="alertbox alert-success"><button type="button" class="close">x</button><p><strong>Success!</strong> ' + message + '</p></div>'
+      $(position).append(successMessage);
       setTimeout(deleteContent, 5000)
       function deleteContent() {
-        console.log('timeout left');
-        $('.alert').remove();
+        $('.alert').find('.alertbox:first').remove();
       }
     },
 
     error: function(message, position) {
-      var errorMessage = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> ' + message + '</div>'
-      $(position).prepend(errorMessage);
+      var errorMessage = '<div class="alertbox alert-danger"><button type="button" class="close">x</button><p><strong>Sorry!</strong> ' + message + '</p></div>'
+      $(position).append(errorMessage);
       setTimeout(deleteContent, 5000)
       function deleteContent() {
-        console.log('timeout left');
-        $('.alert').remove();
+        $('.alert').find('.alertbox:first').remove();
       }
     }
   }

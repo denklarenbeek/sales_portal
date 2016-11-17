@@ -13,6 +13,7 @@ app.controller('geoLocationCtrl', function($scope, mapsApiServices, $http, alert
       $scope.longitude = longitude;
 
       mapsApiServices.calcDistance('json', 'metric', 52.027145, 5.6338212, $scope.latitude, $scope.longitude).then(function(response){
+        console.log(response);
         var distance = response.data.rows[0].elements[0].distance.value
         if(distance <= 20000)  {
           $scope.customer.distance = "<20km";
@@ -29,7 +30,7 @@ app.controller('geoLocationCtrl', function($scope, mapsApiServices, $http, alert
 
     function error() {
       var message = "Unable to retrieve your location";
-      alertMessServices.error(message, '.container-content');
+      alertMessServices.error(message, '.alert');
     };
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -38,12 +39,12 @@ app.controller('geoLocationCtrl', function($scope, mapsApiServices, $http, alert
 
   $scope.calcInfoDistance = function() {
     if($scope.customer.street === undefined || $scope.customer.city === undefined) {
-      alertMessServices.error('Please fill in the street and/or address', '.container-content');
+      alertMessServices.error('Please fill in the street and/or address', '.alert');
     } else {
         mapsApiServices.calcDistance('json', 'metric', 52.027145, 5.6338212, $scope.customer.street, $scope.customer.city).then(function(response){
           if(response.data.rows[0].elements[0].status === "NOT_FOUND") {
             var message = 'Location is ' + response.data.rows[0].elements[0].status;
-            alertMessServices.error(message, '.container-content');
+            alertMessServices.error(message, '.alert');
           } else {
             var distance = response.data.rows[0].elements[0].distance.value
             if(distance <= 20000)  {
