@@ -76,6 +76,19 @@ input {
 .alert-danger strong {
   color: #a94442; }
 
+.bb-select {
+  -webkit-appearance: none;
+  height: 40px;
+  width: 90%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #D2D2D2;
+  border-radius: 0;
+  box-shadow: 0 1px 1px #D2D2D2;
+  background: white;
+  padding-left: 12px; }
+
 .container {
   width: 100%;
   padding: 0; }
@@ -302,15 +315,44 @@ input {
 
 .offer-info {
   padding-left: 95px; }
-  .offer-info-pumpwatch-table th {
-    font-size: 14px;
-    font-weight: normal;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-right: 1px solid #002f49; }
-    .offer-info-pumpwatch-table th:first-child {
-      padding-left: 0; }
-    .offer-info-pumpwatch-table th:nth-last-child(-n+2) {
-      border-right: none; }
+  .offer-info-pumpwatch {
+    background-color: white;
+    width: 50%;
+    border-radius: 4px;
+    padding-bottom: 20px; }
+    .offer-info-pumpwatch h2 {
+      padding-top: 10px;
+      padding-left: 10px; }
+    .offer-info-pumpwatch-table th {
+      font-size: 14px;
+      padding-bottom: 15px;
+      font-weight: 600;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-right: 1px solid #002f49;
+      text-align: center;
+      border-bottom: 1px solid #002f49; }
+      .offer-info-pumpwatch-table th:first-child {
+        padding-left: 0; }
+      .offer-info-pumpwatch-table th:nth-last-child(-n+1) {
+        border-right: none; }
+    .offer-info-pumpwatch-table td {
+      width: 150px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px; }
+      .offer-info-pumpwatch-table td:last-child {
+        padding-left: 16px;
+        width: 75px;
+        font-size: 14px; }
+      .offer-info-pumpwatch-table td label {
+        -webkit-appearance: none;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 14px;
+        font-weight: normal; }
 
 /*# sourceMappingURL=main.css.map */

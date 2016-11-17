@@ -11,6 +11,7 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
     dataServices.get(id)
     .then(function successCallback(response) {
       $scope.customer = response.data;
+      $rootScope.data = response.data;
     });
 
   //PUT the information
@@ -28,6 +29,7 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
 
   //Delete the information
   $scope.deleteLocation = function(id) {
+    var url = 'https://bbsalesapi.herokuapp.com/locations';
     //Remove the location out of the database
     dataServices.remove(id).then(function (response) {
       console.log(response);
@@ -35,4 +37,10 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
       $rootScope.editing = false;
     })
   };
+
+  //Show offer information
+
+
+
+
 });

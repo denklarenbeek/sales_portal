@@ -193,35 +193,3 @@
     }
   }
 }
-
-//STYLING OFFERTE SECTION
-.offer-info {
-  padding-left: $container-padding;
-
-  &-pumpwatch {
-
-    &-table {
-
-      th {
-        font-size: 14px;
-        font-weight: normal;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-right: 1px solid $primary-color;
-
-        &:first-child{
-          padding-left: 0;
-        }
-
-        &:nth-last-child(-n+2) {
-          border-right: none;
-        }
-
-      }
-
-    }
-
-
-  }
-
-}

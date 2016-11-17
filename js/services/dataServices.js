@@ -21,7 +21,7 @@ app.factory('dataServices', function($http) {
         url:  url + '/' + id
       })
     },
-    post: function(data) {
+    post: function(url, data) {
       return $http.post(url, data, null);
     },
     put: function(id, data) {

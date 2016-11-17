@@ -1,0 +1,61 @@
+//STYLING OFFERTE SECTION
+.offer-info {
+  padding-left: $container-padding;
+
+  &-pumpwatch {
+    background-color: white;
+    width: 50%;
+    border-radius: 4px;
+    padding-bottom: 20px;
+
+    h2 {
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    &-table {
+
+      th {
+        font-size: 14px;
+        padding-bottom: 15px;
+        font-weight: 600;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 1px solid $primary-color;
+        text-align: center;
+        border-bottom: 1px solid $primary-color;
+
+        &:first-child{
+          padding-left: 0;
+        }
+
+        &:nth-last-child(-n+1) {
+          border-right: none;
+        }
+
+      }
+      td {
+        width: 150px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+
+        &:last-child {
+          padding-left: 16px;
+          width: 75px;
+          font-size: 14px;
+        }
+        label {
+          -webkit-appearance: none;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 0;
+          text-align: center;
+          padding-top: 10px;
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

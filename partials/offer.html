@@ -9,33 +9,28 @@
             <th>Aantal Analoog</th>
             <th>Aantaal IP</th>
             <th>
-              <button class="btn-bb" ><i class="fa fa-plus-square-o"></i></button>
+              <button ng-show="editing" ng-click="addItem('pumpwatch')" class="btn-bb" ><i class="fa fa-plus-square-o"></i></button>
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="pumpwatch in customer.documents.pumpwatch">
+          <tr ng-repeat="pumpwatch in offer.pw">
             <td>
-              <select class="form-control" name="pumpwatch-type" ng-options="" ng-model="newLocation.pumpwatch_type">
-                <option>PumpWatch type</option>
+              <select ng-show="editing" class="form-control bb-select" name="pumpwatch-type" ng-model="pumpwatch.type">
+                <option ng-repeat="type in articles" ng-model="pumpwatch.type">{{type}}</option>
               </select>
-            </td>
-            <td ng-if="">
-              <select class="form-control" name="quantity-analog" ng-options="" ng-model="newLocation.analog">>
-                <option>Aantal analoog</option>
-              </select>
-            </td>
-            <td ng-if="">
-              <select class="form-control" name="quantity-ip" ng-options="" ng-model="newLocation.ip">>
-                <option>Aantal IP</option>
-              </select>
+              <label ng-hide="editing">{{pumpwatch.type}}</label>
             </td>
             <td>
-              <div class="btn-group table-buttons">
-                <a class="btn btn-success"><i class="fa fa-floppy-o"></i></a>
-                <a class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
-              </div>
+              <input ng-show="editing" class="form-control bb-select" name="quantity-analog" ng-model="pumpwatch.q_analog">
+              <label ng-hide="editing">{{pumpwatch.q_analog}}</label>
+            </td>
+            <td>
+              <input ng-show="editing" class="form-control bb-select" name="quantity-ip" ng-model="pumpwatch.q_ip">
+              <label ng-hide="editing">{{pumpwatch.q_ip}}</label>
+            </td>
+            <td>
+              <button ng-show="editing" ng-click="deleteItem(pumpwatch._id, $index, 'pumpwatch')" class="btn-bb" ><i class="fa fa-trash-o"></i></button>
             </td>
           </tr>
         </tbody>
