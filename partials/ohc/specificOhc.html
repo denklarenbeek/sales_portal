@@ -1,0 +1,74 @@
+<div class="content">
+  <div class="customer-info-person">
+    <h2>Camera's en toebehoren</h2>
+    <div class="customer-info-person-salution form-group">
+      <div class="customer-info-person-salution-title">
+        <p>Binnen camera's</p>
+      </div>
+      <div class="customer-info-person-salution-group">
+        <label ng-hide="editing" for="">{{document.insidecameras}}</label>
+        <input ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="text">
+      </div>
+    </div>
+    <div class="customer-info-person-lastname form-group">
+      <div class="customer-info-person-lastname-title">
+        <p>Buiten camera's:</p>
+      </div>
+      <div class="customer-info-person-lastname-group">
+        <label ng-hide="editing" for="surname">{{document.outsidecameras}}</label>
+        <input ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="text">
+      </div>
+    </div>
+    <div class="customer-info-person-lastname form-group">
+      <div class="customer-info-person-lastname-title">
+        <p>Monitoren:</p>
+      </div>
+      <div class="customer-info-person-lastname-group">
+        <label ng-hide="editing" for="surname">{{document.q_monitors}}</label>
+        <input ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="customer-info-person">
+    <h2>PumpWatch en toebehoren</h2>
+    <div class="customer-info-person-salution form-group">
+      <div class="customer-info-person-salution-title">
+        <p>PumpWatch</p>
+      </div>
+      <div class="customer-info-person-salution-group">
+        <label ng-hide="editing" for="">{{document.q_pumpwatch}}</label>
+        <input ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="text">
+      </div>
+    </div>
+    <div class="customer-info-person-salution form-group">
+      <div class="customer-info-person-salution-title">
+        <p>Slimme modules</p>
+      </div>
+      <div ng-repeat="module in document.services | filter: { category:'Slimme_modules' }" class="customer-info-person-salution-group">
+        <label ng-hide="editing" for="">{{module.description}}</label>
+        <input ng-show="editing" ng-model="module.description"class="form-control" for="" type="text">
+      </div>
+    </div>
+    <div class="customer-info-person-salution form-group">
+      <div class="customer-info-person-salution-title">
+        <p>Slimme producten</p>
+      </div>
+      <div ng-repeat="module in document.services | filter: { category:'Slimme_producten' }" class="customer-info-person-salution-group">
+        <label ng-hide="editing" for="">{{module.description}}</label>
+        <select ng-model="module.description">
+          <option value="">PumpCheck</option>
+          <option value="">AutoAlert</option>
+        </select>
+      </div>
+    </div>
+    <div class="customer-info-person-salution form-group">
+      <div class="customer-info-person-salution-title">
+        <p>Slimme diensten</p>
+      </div>
+      <div ng-repeat="module in document.services | filter: { category:'Slimme_diensten' }" class="customer-info-person-salution-group">
+        <label ng-hide="editing" for="">{{module.description}}</label>
+        <input ng-show="editing" ng-model="module.description"class="form-control" for="" type="text">
+      </div>
+    </div>
+  </div>
+</div>

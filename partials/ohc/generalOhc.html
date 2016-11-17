@@ -1,0 +1,17 @@
+<div class="content">
+  <div ng-repeat="document in documents | filter:search" class="content-customers">
+    <div class="content-customers-block">
+      <a ng-click="specificCustomer = true; clickOhc($index)">
+      <div class="content-customers-block-icon">
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </div>
+      <div class="content-customers-block-text">
+        <p class="content-customers-block-text-name">{{document.changed}}</p>
+      </div>
+      <div class="content-customers-block-arrow">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
