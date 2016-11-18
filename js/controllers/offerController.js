@@ -18,7 +18,7 @@ app.controller('offerController', function($scope, $http, $routeParams, dataServ
     var id = offerInfoServices.deleteItem($routeParams.id, x._id, type, pId);
     console.log(id);
     dataServices.remove(id).then(function(response){
-      alertMessServices.success('PumpWatch is verwijderd', '.container-content');
+      alertMessServices.success('PumpWatch is verwijderd');
     })
     $scope.offer.pw.splice(index, 1);
   };
@@ -29,7 +29,7 @@ app.controller('offerController', function($scope, $http, $routeParams, dataServ
     var id = 'https://bbsalesapi.herokuapp.com/locations/' + a;
     console.log(id);
     dataServices.post(id).then(function(response){
-      alertMessServices.success('PumpWatch is toegevoegd', '.container-content');
+      alertMessServices.success('PumpWatch is toegevoegd');
       $scope.offer.pw.push({});
     })
   }

@@ -1,4 +1,5 @@
 <div class="content">
+  <button ng-click="newOhcItem()" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i> Nieuw onderhoud</button>
   <div ng-repeat="document in documents | filter:search" class="content-customers">
     <div class="content-customers-block">
       <a ng-click="specificCustomer = true; clickOhc($index)">

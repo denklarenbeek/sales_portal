@@ -15,34 +15,31 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
     $rootScope.data = response.data;
   }, function errorCallback(response){
     var errorMessage = response.status + ' ' + response.statusText;
-    alertMessServices.error(errorMessage, '.alert');
+    alertMessServices.error(errorMessage);
   });
 
   //PUT the information
   $scope.saveLocation = function(id, customerData) {
     //Check if the company is filled in
     if($scope.customer.company === undefined || $scope.customer.company === "") {
-      alertMessServices.error("Please fill in the company", '.alert');
+      alertMessServices.error("Please fill in the company");
     //Check if the city if filled in
     } else if($scope.customer.city === undefined || $scope.customer.city === "") {
-      alertMessServices.error("Please fill in the city", '.alert');
+      alertMessServices.error("Please fill in the city");
     //Save the data
     } else {
       dataServices.put(id, customerData).then(function successCallback(response) {
         if(response.status = 200) {
           var message = response.config.data.company + " is bijgewerkt";
-          alertMessServices.success(message, '.alert');
+          alertMessServices.success(message);
           $rootScope.editing = false;
         }
       //Error Callback
       }, function errorCallback(response){
         var errorMessage = response.statusText + ' ' + response.data.company;
-        alertMessServices.error(errorMessage, '.alert');
+        alertMessServices.error(errorMessage);
       })
     }
-
-
-
   };
 
   //Delete the information
