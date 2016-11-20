@@ -1,62 +1,57 @@
-<div class="content">
-  <div class="customer-info-person">
+<div class="content content-ohc">
+  <button ng-click="deleteOhcItem()" class="btn-bb btn-ohc"><i class="fa fa-trash-o" aria-hidden="true"></i> Verwijder</button>
+  <div class="content-table">
     <h2>Camera's en toebehoren</h2>
-    <div class="customer-info-person-salution form-group">
-      <div class="customer-info-person-salution-title">
-        <p>Binnen camera's</p>
+    <div class="content-block">
+      <div class="content-block-title">
+        <p>Binnen camera's:</p>
       </div>
-      <div class="customer-info-person-salution-group">
+      <div class="content-block-input">
         <label ng-hide="editing" for="">{{document.insidecameras}}</label>
-        <input ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="text">
+        <input ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="number">
       </div>
     </div>
-    <div class="customer-info-person-lastname form-group">
-      <div class="customer-info-person-lastname-title">
+    <div class="content-block">
+      <div class="content-block-title">
         <p>Buiten camera's:</p>
       </div>
-      <div class="customer-info-person-lastname-group">
+      <div class="content-block-input">
         <label ng-hide="editing" for="surname">{{document.outsidecameras}}</label>
-        <input ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="text">
+        <input ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="number">
       </div>
     </div>
-    <div class="customer-info-person-lastname form-group">
-      <div class="customer-info-person-lastname-title">
+    <div class="content-block">
+      <div class="content-block-title">
         <p>Monitoren:</p>
       </div>
-      <div class="customer-info-person-lastname-group">
+      <div class="content-block-input">
         <label ng-hide="editing" for="surname">{{document.q_monitors}}</label>
-        <input ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="text">
+        <input ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="number">
       </div>
     </div>
   </div>
-  <div class="customer-info-person">
+  <div class="content-table">
     <h2>PumpWatch en toebehoren</h2>
-    <div class="customer-info-person-salution form-group">
-      <div class="customer-info-person-salution-title">
+    <div class="content-block">
+      <div class="content-block-title">
         <p>PumpWatch</p>
       </div>
-      <div class="customer-info-person-salution-group">
+      <div class="content-block-input">
         <label ng-hide="editing" for="">{{document.q_pumpwatch}}</label>
-        <input ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="text">
+        <input ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="number">
       </div>
     </div>
-    <div class="customer-info-person-salution form-group">
-      <table class="customer-info-person-salution-title" >
-        <thead>
+    <div class="">
+      <table class="" >
+        <thead class="">
           <tr>
             <th>Slimme modules</th>
             <th>
-              <a ng-show="editing" ng-click="newItem('Slimme modules')" class="btn-bb"><i class="fa fa-plus-square-o"></i>New</a>
+              <a ng-show="editing" ng-click="newItem('Slimme modules')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
             </th>
           </tr>
         </thead>
-        <tfoot>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-          </tfoot>
-        <tbody>
+        <tbody class="">
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme modules' }">
                 <td>
                   <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
@@ -77,16 +72,10 @@
           <tr>
             <th>Slimme producten</th>
             <th>
-              <a ng-show="editing" ng-click="newItem('Slimme producten')" class="btn-bb"><i class="fa fa-plus-square-o"></i>New</a>
+              <a ng-show="editing" ng-click="newItem('Slimme producten')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
             </th>
           </tr>
         </thead>
-        <tfoot>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-          </tfoot>
         <tbody>
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme producten' }">
                 <td>
@@ -108,16 +97,10 @@
           <tr>
             <th>Slimme diensten</th>
             <th>
-              <a ng-show="editing" ng-click="newItem('Slimme diensten')" class="btn-bb"><i class="fa fa-plus-square-o"></i>New</a>
+              <a ng-show="editing" ng-click="newItem('Slimme diensten')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
             </th>
           </tr>
         </thead>
-        <tfoot>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-          </tfoot>
         <tbody>
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme diensten' }">
                 <td>

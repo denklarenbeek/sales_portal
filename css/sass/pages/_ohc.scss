@@ -1,0 +1,112 @@
+.btn-ohc {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-ohc {
+  font-size: 16px;
+
+  .content-table {
+    width: 40%;
+    float: left;
+    margin-right: 5%;
+  }
+
+  .content-block {
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+
+    &-title {
+      display: inline-block;
+      width: 30%;
+      height: 40px;
+      margin-right: 10%;
+      margin-bottom: 15px;
+
+    }
+
+    &-input {
+      display: inline-block;
+      text-align: center;
+      width: 50px;
+      height: 40px;
+      margin-bottom: 15px;
+      appearance: none;
+    }
+  }
+
+  .table-block {
+    margin-top: 30px;
+  }
+
+  table {
+    margin-top: 15px;
+    width: 350px;
+
+    thead {
+      tr {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+
+    th {
+      font-weight: normal;
+
+      &:first-child {
+        margin-right: 10%;
+      }
+
+      &:last-child {
+        text-align: right;
+        width: 50px;
+        padding-right: 5px;
+      }
+
+    }
+
+    tr {
+      height: 40px;
+    }
+
+    td {
+      padding-top: 10px;
+      font-weight: normal;
+
+      a {
+        padding: 8px 15px;
+      }
+
+      &:first-child{
+        width: 150px;
+      }
+      &:last-child {
+        width: 100px;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      label {
+        font-weight: normal;
+      }
+    }
+  }
+
+  input {
+    &[type=number] {
+      width: 50px;
+      text-align: center;
+      margin-left: auto;
+      padding-right: 15px;
+    }
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+
+    }
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
