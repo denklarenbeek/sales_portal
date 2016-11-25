@@ -22,10 +22,14 @@ app.controller('ohcController', function($scope, $http, $routeParams, $location,
   $scope.newOhcDocument = function() {
     var location = $location.path() + '/documents/';
     dataServices.post(location, {type: 'ohc'}).then(function successCallback(response){
+      //Set editing mode on
       $rootScope.editing = true;
-      $location.path(location + response.data._id);
+      //Get last object number
+      var a = response.data.documents.length -1;
+      //Navigate to location/:lId/documents/:dId
+      $location.path(location + response.data.documents[a]._id);
+      //Set alert message success
       alertMessServices.success('Nieuwe locatie is aangemaakt');
-      console.log(response.data);
     }, function errorCallback(error){
       var errorMessage = error.status + ' ' + erro.statusText;
       alertMessServices.error(errorMessage);

@@ -1,3 +1,20 @@
+.tab-ohc-info {
+  .input {
+    font-size: 14px;
+    background: white;
+    width: 150px;
+    height: 40px;
+    margin-top: 15px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    &::-webkit-input-placeholder {
+      color: $fourth-color;
+    }
+  }
+}
+
 .btn-ohc {
   display: block;
   margin-top: 30px;
@@ -10,6 +27,10 @@
     width: 40%;
     float: left;
     margin-right: 5%;
+
+    h2 {
+      font-size: 24px;
+    }
   }
 
   .content-block {
@@ -59,7 +80,7 @@
 
       &:last-child {
         text-align: right;
-        width: 50px;
+        width: 60px;
         padding-right: 5px;
       }
 
@@ -84,10 +105,6 @@
         width: 100px;
         text-align: right;
         padding-right: 5px;
-      }
-
-      label {
-        font-weight: normal;
       }
     }
   }

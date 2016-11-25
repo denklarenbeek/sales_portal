@@ -5,8 +5,9 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
 
   var id = $location.path();
   $scope.typeSmartModules = ['Fuel', 'Shop', 'Car', 'Service', 'Park'];
-  $scope.typeSmartProducts = ['AutoAlert', 'PumpCheck'];
+  $scope.typeSmartProducts = [{'description': 'AutoAlert', 'time': 0.15},{'description': 'PumpCheck', 'time': 1}]
   $scope.typeSmartServices = ['Portal', 'Watch-it', 'Snapshot', 'Heartbeat 2.0', 'BBI'];
+  $scope.typeRemote = ['Open VPN', 'Tokheim', '4G']
 
   // GET specific document
   dataServices.get(id).then(function successCallback(response){
@@ -18,6 +19,7 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
 
   //PUT specific document
   $scope.saveDocument = function(customerData) {
+    console.log(customerData);
     dataServices.put(id, customerData).then(function successCallback(response) {
         var message = response.config.data.company + " is bijgewerkt";
         alertMessServices.success(message);
@@ -39,20 +41,22 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
 
   //Push new item to the services object
   $scope.newItem = function(cat) {
-    $scope.document.services.push({category: cat});
+    var url = id + '/services/'
+    dataServices.post(url, {category: 'Slimme producten'}).then(function successCallback(response) {
+      $scope.document.services.push({category: cat});
+    }, function errorCallback(error){
+      alertMessServices.error("Can not save service");
+    });
+
   }
 
   //Delete item for the services object
   $scope.deleteItem = function(id) {
-    var locationId = $routeParams.id;
-    var serviceId = id;
-    var documentId = $scope.document._id;
-    var url = locationId + '/documents/' + documentId + '/services/' + serviceId;
-    var index = $scope.document.services.findIndex(x => x._id==serviceId);
+    var url = $location.path() + '/services/' + id;
     dataServices.remove(url).then(function(response){
       alertMessServices.success('verwijderd');
     })
-    $scope.document.services.splice(index, 1);
+    $scope.document.services.splice($scope.document.services.findIndex(x => x._id==id, 1));
   }
 
 });

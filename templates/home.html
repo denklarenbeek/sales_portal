@@ -1,6 +1,8 @@
 <div class="content-title">
   <h2>Home</h2>
-  <button ng-click="newLocation(); editing = true" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Nieuwe locatie</button>
+  <div class="buttons">
+    <button ng-click="newLocation(); editing = true" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Nieuwe locatie</button>
+  </div>
 </div>
 <div ng-class="{'search-bar-focus': searchFocus === 'active'}" class="search-bar">
   <i class="fa fa-search" aria-hidden="true"></i>
