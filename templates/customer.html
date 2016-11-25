@@ -1,8 +1,8 @@
 <div class="content-title">
   <a href="#/"><i class="fa fa-angle-left arrow-back" aria-hidden="true"></i></a>
   <h2>{{customer.company}} <h3>| {{customer.city}}</h3></h2>
-  <button ng-click="deleteLocation(customer._id)" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Verwijder locatie</button>
-  <button ng-show="editing" ng-click="editing = false; saveLocation(customer._id, customer)" class="btn-bb new-customer"><i class="fa fa-floppy-o" aria-hidden="true"></i>Bewaar locatie</button>
+  <button ng-click="deleteLocation()" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Verwijder locatie</button>
+  <button ng-show="editing" ng-click="editing = false; saveLocation(customer)" class="btn-bb new-customer"><i class="fa fa-floppy-o" aria-hidden="true"></i>Bewaar locatie</button>
   <button ng-hide="editing" ng-click="editing = true" class="btn-bb new-customer"><i class="fa fa-pencil" aria-hidden="true"></i>Bewerk locatie</button>
 </div>
 <div ng-init="selectedTab = 'person'" class="navigation-tabs">

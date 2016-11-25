@@ -1,0 +1,129 @@
+<div id="tab3" class="tab-ohc-info">
+  <div class="content-title">
+    <a href="#/"><i class="fa fa-angle-left arrow-back" aria-hidden="true"></i></a>
+    <h2 ng-hide="editing">{{document.description}}</h2>
+    <input ng-show="editing" ng-model="document.description" type="text"></input>
+    <button ng-click="deleteDocument()" class="btn-bb"><i class="fa fa-trash-o" aria-hidden="true"></i>Verwijder document</button>
+    <button ng-show="editing" ng-click="editing = false; saveDocument(document)" class="btn-bb new-customer"><i class="fa fa-floppy-o" aria-hidden="true"></i>Bewaar document</button>
+    <button ng-hide="editing" ng-click="editing = true" class="btn-bb new-customer"><i class="fa fa-pencil" aria-hidden="true"></i>Bewerk document</button>
+  </div>
+  <div class="content content-ohc">
+    <div class="content-table">
+      <h2>Camera's en toebehoren</h2>
+      <div class="content-block">
+        <div class="content-block-title">
+          <p>Binnen camera's:</p>
+        </div>
+        <div class="content-block-input">
+          <label ng-hide="editing" for="">{{document.insidecameras}}</label>
+          <input ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="number">
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="content-block-title">
+          <p>Buiten camera's:</p>
+        </div>
+        <div class="content-block-input">
+          <label ng-hide="editing" for="surname">{{document.outsidecameras}}</label>
+          <input ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="number">
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="content-block-title">
+          <p>Monitoren:</p>
+        </div>
+        <div class="content-block-input">
+          <label ng-hide="editing" for="surname">{{document.q_monitors}}</label>
+          <input ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="number">
+        </div>
+      </div>
+    </div>
+    <div class="content-table">
+      <h2>PumpWatch en toebehoren</h2>
+      <div class="content-block">
+        <div class="content-block-title">
+          <p>PumpWatch</p>
+        </div>
+        <div class="content-block-input">
+          <label ng-hide="editing" for="">{{document.q_pumpwatch}}</label>
+          <input ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="number">
+        </div>
+      </div>
+      <div class="">
+        <table class="" >
+          <thead class="">
+            <tr>
+              <th>Slimme modules</th>
+              <th>
+                <a ng-show="editing" ng-click="newItem('Slimme modules')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="">
+              <tr ng-repeat="module in document.services | filter: { category: 'Slimme modules' }">
+                  <td>
+                    <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                      <option ng-repeat="type in typeSmartModules" ng-model="module.description">{{type}}</option>
+                    </select>
+                    <label ng-hide="editing">{{module.description}}</label>
+                  </td>
+                  <td>
+                    <a ng-show="editing" ng-click="deleteItem(module._id)" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="customer-info-person-salution form-group">
+        <table class="customer-info-person-salution-title" >
+          <thead>
+            <tr>
+              <th>Slimme producten</th>
+              <th>
+                <a ng-show="editing" ng-click="newItem('Slimme producten')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="module in document.services | filter: { category: 'Slimme producten' }">
+                  <td>
+                    <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                      <option ng-repeat="type in typeSmartProducts" ng-model="module.description">{{type}}</option>
+                    </select>
+                    <label ng-hide="editing">{{module.description}}</label>
+                  </td>
+                  <td>
+                    <a ng-show="editing" ng-click="deleteItem(module._id)" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="customer-info-person-salution form-group">
+        <table class="customer-info-person-salution-title" >
+          <thead>
+            <tr>
+              <th>Slimme diensten</th>
+              <th>
+                <a ng-show="editing" ng-click="newItem('Slimme diensten')" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="module in document.services | filter: { category: 'Slimme diensten' }">
+                  <td>
+                    <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                      <option ng-repeat="type in typeSmartServices" ng-model="module.description">{{type}}</option>
+                    </select>
+                    <label ng-hide="editing">{{module.description}}</label>
+                  </td>
+                  <td>
+                    <a ng-show="editing" ng-click="deleteItem(module._id)" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

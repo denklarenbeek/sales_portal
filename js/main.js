@@ -16,6 +16,11 @@ app.config(function ($routeProvider){
       controller: "locationIDCtrl",
       templateUrl: "templates/customer.html"
     })
+    .when("/locations/:id/documents/:id", {
+      controller: "specificOhcController",
+      templateUrl: "templates/ohc.html"
+
+    })
     .otherwise({redirectTo: "/locations"})
 
 });

@@ -1,3 +1,20 @@
 <div id="tab3" class="tab-ohc-info" ng-controller="ohcController" >
-  <div ng-include="'partials/ohc/' + selectedOhc + '.html'" class="container-content">
+  <div class="content">
+    <button ng-click="newOhcDocument()" class="btn-bb btn-ohc"><i class="fa fa-trash-o" aria-hidden="true"></i> Nieuw onderhoud</button>
+    <div ng-repeat="document in documents | filter:search" class="content-customers">
+      <div class="content-customers-block">
+        <a ng-click="goToPage(document._id, $index)">
+        <div class="content-customers-block-icon">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="content-customers-block-text">
+          <p class="content-customers-block-text-name">{{document.description}}</p>
+        </div>
+        <div class="content-customers-block-arrow">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>

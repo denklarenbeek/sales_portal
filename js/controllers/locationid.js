@@ -3,10 +3,9 @@
 var app = angular.module('salesPortal');
 
 app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServices, $location, $rootScope, alertMessServices) {
+  var id = $location.path();
 
-  var id = $routeParams.id;
   $scope.selectedNav = "customer";
-
 
   //GET the database information
   dataServices.get(id)
@@ -19,7 +18,7 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
   });
 
   //PUT the information
-  $scope.saveLocation = function(id, customerData) {
+  $scope.saveLocation = function(customerData) {
     //Check if the company is filled in
     if($scope.customer.company === undefined || $scope.customer.company === "") {
       alertMessServices.error("Please fill in the company");
@@ -43,8 +42,7 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
   };
 
   //Delete the information
-  $scope.deleteLocation = function(id) {
-    var url = 'https://bbsalesapi.herokuapp.com/locations';
+  $scope.deleteLocation = function() {
     //Remove the location out of the database
     dataServices.remove(id).then(function (response) {
       console.log(response);
