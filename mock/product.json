@@ -1,0 +1,124 @@
+[
+  {
+    "description": "Fuel",
+    "install_time": 1,
+    "ohc_time": 0.15,
+    "price": 800,
+    "category": "Slimme modules"
+  },
+  {
+    "description": "Shop",
+    "install_time": 1,
+    "ohc_time": 0.15,
+    "price": 1500,
+    "category": "Slimme modules"
+  },
+  {
+    "description": "Service",
+    "install_time": 1,
+    "ohc_time": 0.15,
+    "price": 1500,
+    "category": "Slimme modules"
+  },
+  {
+    "description": "Park",
+    "install_time": 10,
+    "ohc_time": 15,
+    "price": 1500,
+    "category": "Slimme modules"
+  },
+  {
+    "description": "AutoAlert",
+    "install_time": 2,
+    "ohc_time": 1,
+    "price": 1500,
+    "category": "Slimme producten"
+  },
+  {
+    "description": "PumpCheck",
+    "install_time": 1,
+    "ohc_time": 1,
+    "price": 1500,
+    "category": "Slimme producten"
+  },
+  {
+    "description": "Portal",
+    "install_time": 2,
+    "ohc_time": 1,
+    "price": 250,
+    "billing": "year",
+    "category": "Slimme diensten"
+  },
+  {
+    "description": "Watch-it",
+    "install_time": 1,
+    "ohc_time": 0.15,
+    "price": 250,
+    "billing": "year",
+    "category": "Slimme diensten"
+  },
+  {
+    "description": "Snapshot",
+    "install_time": 1,
+    "ohc_time": 1,
+    "price": 125,
+    "billing": "year",
+    "category": "Slimme diensten"
+  },
+  {
+    "description": "Hearbeat 2.0",
+    "install_time": 1,
+    "ohc_time": 1,
+    "price": 250,
+    "billing": "year",
+    "category": "Slimme diensten"
+  },
+  {
+    "description": "BBI",
+    "install_time": 4,
+    "ohc_time": 1,
+    "price": 995,
+    "billing": "year",
+    "category": "Slimme diensten"
+  },
+  {
+    "description": "OpenVpn",
+    "install_time": 4,
+    "ohc_time": 1,
+    "price": 167.50,
+    "billing": "year",
+    "category": "Remote verbinding"
+  },
+  {
+    "description": "Tokheim",
+    "install_time": 0,
+    "ohc_time": 0,
+    "price": 0,
+    "billing": null,
+    "category": "Remote verbinding"
+  },
+  {
+    "description": "4g",
+    "install_time": 2,
+    "ohc_time": 1,
+    "price": 350,
+    "billing": "year",
+    "category": "Remote verbinding"
+  },
+  {
+    "description": "Binnen camera's",
+    "install_time": 1.5,
+    "ohc_time": 1,
+    "price": null,
+    "billing": null,
+    "category": "Type camera's"
+  },
+  {
+    "description": "Buiten camera's",
+    "install_time": 2,
+    "ohc_time": 2,
+    "price": null,
+    "billing": null,
+    "category": "Type camera's"
+  }
+]
