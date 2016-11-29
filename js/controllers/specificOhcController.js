@@ -9,7 +9,6 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
   $scope.typeSmartServices = [];
   $scope.typeRemote = [];
   $scope.test = [];
-  $scope.totalAmount = 0;
 
   //function for push the products in the right array
   function categoryArray(data, value, array) {
@@ -20,36 +19,48 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
     }
   }
 
-  function getOtherInfo(data, value, array) {
+  function getOtherInfo(data) {
     for (var i = 0, iLen=data.length; i<iLen; i++) {
       var y = $scope.products.findIndex(x => x.description==data[i].description)
       data[i].ohc_time = $scope.products[y].ohc_time;
-      data[i].price = $scope.products[y].price;
-      data[i].billing = $scope.products[y].billing;
-      console.log(data[i]);
+      data[i].year_price = $scope.products[y].year_price;
     }
   }
 
   function calcServices(services) {
     for (var i = 0, iLen=services.length; i<iLen; i++) {
-      $scope.totalAmount += services[i].ohc_time;
+      $scope.document.totalAmount += services[i].ohc_time;
+      $scope.document.totalYearAmount += services[i].year_price;
     }
   }
 
-  function calcCameras(type, datakey) {
-    var y = $scope.products.findIndex(x => x.description==type);
-    var qCam = datakey;
-    var ohcTime = $scope.products[y].ohc_time;
-    var total = qCam * ohcTime;
-    $scope.totalAmount += total;
+  //Calculate the ohc_time (q_monitors, q_pumpwatch, insidecameras, outsidecameras)
+  function calcQuantityProducts(cameraType, quantityCameras) {
+    var objectIndex = $scope.products.findIndex(x => x.description==cameraType);
+    var ohcTime = $scope.products[objectIndex].ohc_time;
+    var total = quantityCameras * ohcTime;
+    $scope.document.totalAmount += total;
   }
 
-  $scope.testbutton = function calculateOhc() {
-    $scope.totalAmount = 0;
+  function calcTravelCosts() {
+    var objectIndex = $scope.products.findIndex(x => x.description==$rootScope.data.distance);
+    var travel = $scope.products[objectIndex].install_price;
+    $scope.document.travel_costs = travel;
+  }
+
+  $scope.calcTotalAmountDocument = function calculateOhc() {
+    getOtherInfo($scope.document.services);
+    $scope.document.totalAmount = 0;
+    $scope.document.totalYearAmount = 0;
     calcServices($scope.document.services);
-    console.log($scope.totalAmount);
-    calcCameras("Binnen camera's", $scope.document.insidecameras);
-    console.log($scope.totalAmount);
+    calcQuantityProducts("Binnen camera's", $scope.document.insidecameras);
+    calcQuantityProducts("Buiten camera's", $scope.document.outsidecameras);
+    calcQuantityProducts("Monitor", $scope.document.q_monitors);
+    calcQuantityProducts("PumpWatch", $scope.document.q_pumpwatch);
+    $scope.document.totalAmount = Math.round($scope.document.totalAmount * (60.25/60));
+
+    //Add travel costs to the total amount
+    calcTravelCosts()
   }
 
   $http.get('mock/product.json').success(function(data){
@@ -74,7 +85,7 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
         var message = response.config.data.company + " is bijgewerkt";
         alertMessServices.success(message);
         $rootScope.editing = false;
-        getOtherInfo($scope.document.services, 'Shop', $scope.test);
+        getOtherInfo($scope.document.services);
     //Error Callback
     }, function errorCallback(response){
       var errorMessage = response.statusText + ' ' + response.data.company;

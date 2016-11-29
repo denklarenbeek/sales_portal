@@ -1,13 +1,13 @@
 <div class="content content-ohc">
   <div class="content-table">
-    <h2>Camera's en toebehoren</h2><button ng-click="testbutton(document.services)">klik me</button>
+    <h2>Camera's en toebehoren</h2><button ng-click="calcTotalAmountDocument()">klik me</button>
     <div class="content-block">
       <div class="content-block-title">
         <p>Binnen camera's:</p>
       </div>
       <div class="content-block-input">
         <label ng-hide="editing" for="">{{document.insidecameras}}</label>
-        <input ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="number">
+        <input ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="document.insidecameras"class="form-control" for="" type="number">
       </div>
     </div>
     <div class="content-block">
@@ -16,7 +16,7 @@
       </div>
       <div class="content-block-input">
         <label ng-hide="editing" for="surname">{{document.outsidecameras}}</label>
-        <input ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="number">
+        <input ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="document.outsidecameras"class="form-control" for="" type="number">
       </div>
     </div>
     <div class="content-block">
@@ -25,7 +25,7 @@
       </div>
       <div class="content-block-input">
         <label ng-hide="editing" for="surname">{{document.q_monitors}}</label>
-        <input ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="number">
+        <input ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="document.q_monitors"class="form-control" for="" type="number">
       </div>
     </div>
     <div class="customer-info-person-salution form-group">
@@ -41,7 +41,7 @@
         <tbody>
             <tr ng-repeat="module in document.services | filter: { category: 'Remote Verbinding' }">
                 <td>
-                  <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                  <select ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
                     <option ng-repeat="type in typeRemote" ng-model="module.description">{{type.description}}</option>
                   </select>
                   <label ng-hide="editing">{{module.description}}</label>
@@ -62,7 +62,7 @@
       </div>
       <div class="content-block-input">
         <label ng-hide="editing" for="">{{document.q_pumpwatch}}</label>
-        <input ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="number">
+        <input ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="document.q_pumpwatch"class="form-control" for="" type="number">
       </div>
     </div>
     <div class="">
@@ -78,7 +78,7 @@
         <tbody class="">
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme modules' }">
                 <td>
-                  <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                  <select ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
                     <option ng-repeat="type in typeSmartModules" ng-model="module.description">{{type.description}}</option>
                   </select>
                   <label ng-hide="editing">{{module.description}}</label>
@@ -104,7 +104,7 @@
         <tbody>
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme producten' }">
                 <td>
-                  <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                  <select ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
                     <option ng-repeat="type in typeSmartProducts" ng-model="module.description">{{type.description}}</option>
                   </select>
                   <label ng-hide="editing">{{module.description}}</label>
@@ -129,7 +129,7 @@
         <tbody>
             <tr ng-repeat="module in document.services | filter: { category: 'Slimme diensten' }">
                 <td>
-                  <select ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
+                  <select ng-change="calcTotalAmountDocument()" ng-show="editing" ng-model="module.description" class="form-control" name="slimme_producten">
                     <option ng-repeat="type in typeSmartServices" ng-model="module.description">{{type.description}}</option>
                   </select>
                   <label ng-hide="editing">{{module.description}}</label>
@@ -141,5 +141,11 @@
         </tbody>
       </table>
     </div>
+  </div>
+  <div class="content-table">
+    <h2>Totaal</h2>
+    <p>Totaal onderhoud: € {{document.totalAmount}}</p>
+    <p>Voorrijkosten: {{document.travel_costs}}</p>
+    <p>Totaal jaarlijks: € {{document.totalYearAmount}}</p>
   </div>
 </div>
