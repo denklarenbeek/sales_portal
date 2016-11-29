@@ -9,6 +9,12 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
   $scope.typeSmartServices = [];
   $scope.typeRemote = [];
 
+  $scope.returnToPage = function() {
+    var page = $location.path().substring(0,36);
+    $rootScope.selectedTab = 'generalOhc';
+    $location.path(page);
+  }
+
   //function for push the products in the right array
   function categoryArray(data, value, array) {
     for (var i = 0, iLen=data.length; i<iLen; i++) {
