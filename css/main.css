@@ -450,4 +450,35 @@ input {
     -webkit-appearance: none;
     margin: 0; }
 
+#admin .content-ohc {
+  display: flex;
+  flex-wrap: wrap; }
+  #admin .content-ohc .content-table {
+    width: 100%; }
+  #admin .content-ohc .content-block {
+    height: auto; }
+  #admin .content-ohc .navigation-tabs {
+    padding-left: 0;
+    display: inline-block;
+    box-shadow: 2px 2px 5px #888; }
+  #admin .content-ohc .table-align-right {
+    text-align: right; }
+  #admin .content-ohc .table-aling-center {
+    text-align: center; }
+  #admin .content-ohc table {
+    width: 100%; }
+    #admin .content-ohc table th {
+      padding-left: 10px; }
+    #admin .content-ohc table tr {
+      background: white;
+      box-shadow: 2px 2px 5px #888888;
+      padding-left: 10px; }
+      #admin .content-ohc table tr:last-child td {
+        padding-bottom: 10px; }
+    #admin .content-ohc table td {
+      padding-left: 10px;
+      padding-bottom: 10px; }
+      #admin .content-ohc table td:last-child {
+        width: 110px; }
+
 /*# sourceMappingURL=main.css.map */

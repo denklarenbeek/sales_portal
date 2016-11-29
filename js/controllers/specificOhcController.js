@@ -8,7 +8,6 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
   $scope.typeSmartProducts = [];
   $scope.typeSmartServices = [];
   $scope.typeRemote = [];
-  $scope.test = [];
 
   //function for push the products in the right array
   function categoryArray(data, value, array) {

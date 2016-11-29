@@ -1,0 +1,61 @@
+<div class="content content-ohc">
+  <div class="content-table">
+    <div ng-repeat="category in category" class="navigation-tabs">
+      <div ng-click="changeTab(category)" ng-class="{'active': adminTab === category}" class="navigation-tabs-tab" data-id="1">
+        <p>{{category}}</p>
+      </div>
+    </div>
+    <div class="content-block">
+      <div class="">
+        <table class="" >
+          <thead class="">
+            <tr>
+              <th>Product</th>
+              <th class="table-aling-center">Install time</th>
+              <th class="table-aling-center">OHC Time</th>
+              <th class="table-align-right">Install Price</th>
+              <th class="table-align-right">Year Price</th>
+              <th class="table-align-right">Categorie</th>
+              <th>
+                <a ng-click="newItem(adminTab)" class="btn-bb"><i class="fa fa-plus-square-o"></i></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="">
+              <tr ng-dblclick="editModeOn()" ng-repeat="item in products | filter: {category: adminTab}">
+                  <td>
+                    <input ng-show="item.editing" ng-model="item.description" class="form-control" for="" type="text">
+                    <label ng-hide="item.editing">{{item.description}}</label>
+                  </td>
+                  <td class="table-aling-center">
+                    <input ng-show="item.editing" ng-model="item.install_time" class="form-control" for="" type="text">
+                    <label ng-hide="item.editing">{{item.install_time}}</label>
+                  </td>
+                  <td class="table-aling-center">
+                    <input ng-show="item.editing" ng-model="item.ohc_time" class="form-control" for="" type="text">
+                    <label ng-hide="item.editing">{{item.ohc_time}}</label>
+                  </td>
+                  <td class="table-align-right">
+                    <input ng-show="item.editing" ng-model="item.install_price" class="form-control" for="" type="text">
+                    <label ng-hide="item.editing">&#8364; {{item.install_price}}</label>
+                  </td>
+                  <td class="table-align-right">
+                    <input ng-show="item.editing" ng-model="item.year_price" class="form-control" for="" type="text">
+                    <label ng-hide="item.editing">&#8364; {{item.year_price}}</label>
+                  </td>
+                  <td class="table-align-right">
+                    <!-- <input ng-show="item.editing" ng-model="item.category" class="form-control" for="" type="text"> -->
+                    <label>{{item.category}}</label>
+                  </td>
+                  <td>
+                    <a ng-hide="item.editing" ng-click="editModeOn()" class="btn btn-bb"><i class="fa fa-pencil"></i></a>
+                    <a ng-show="item.editing" ng-click="editModeOff()" class="btn btn-bb"><i class="fa fa-floppy-o"></i></a>
+                    <a ng-show="item.editing" ng-click="deleteItem(item.description)" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

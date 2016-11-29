@@ -20,6 +20,11 @@ app.config(function ($routeProvider){
       templateUrl: "templates/document.html"
 
     })
+    .when("/admin", {
+      controller: "adminCtrl",
+      templateUrl: "templates/admin.html"
+
+    })
     .otherwise({redirectTo: "/locations"})
 
 });

@@ -1,0 +1,56 @@
+#admin {
+  .content-ohc {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .content-table {
+      width: 100%;
+    }
+
+    .content-block {
+      height: auto;
+    }
+
+    .navigation-tabs {
+      padding-left: 0;
+      display: inline-block;
+      box-shadow: 2px 2px 5px #888;
+    }
+
+    .table-align-right {
+      text-align: right;
+    }
+
+    .table-aling-center {
+      text-align: center;
+    }
+
+    table{
+      width: 100%;
+
+      th {
+        padding-left: 10px;
+      }
+
+      tr {
+        background: white;
+        box-shadow: 2px 2px 5px #888888;
+        padding-left: 10px;
+
+        &:last-child td {
+          padding-bottom: 10px;
+        }
+      }
+
+      td {
+        padding-left: 10px;
+        padding-bottom: 10px;
+
+        &:last-child {
+          width: 110px;
+        }
+      }
+    }
+  }
+}

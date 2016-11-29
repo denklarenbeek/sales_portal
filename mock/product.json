@@ -5,7 +5,8 @@
     "ohc_time": 7,
     "install_price": 800,
     "year_price": 0,
-    "category": "Slimme modules"
+    "category": "Slimme modules",
+    "required": true
   },
   {
     "description": "Shop",
@@ -13,7 +14,8 @@
     "ohc_time": 7,
     "install_price": 1500,
     "year_price": 0,
-    "category": "Slimme modules"
+    "category": "Slimme modules",
+    "required": true
   },
   {
     "description": "Car",
@@ -21,7 +23,8 @@
     "ohc_time": 7,
     "install_price": 455,
     "year_price": 95,
-    "category": "Slimme modules"
+    "category": "Slimme modules",
+    "required": true
   },
   {
     "description": "Service",
@@ -29,7 +32,8 @@
     "ohc_time": 7,
     "install_price": 1500,
     "year_price": 0,
-    "category": "Slimme modules"
+    "category": "Slimme modules",
+    "required": true
   },
   {
     "description": "Park",
@@ -37,7 +41,8 @@
     "ohc_time": 7,
     "install_price": 1500,
     "year_price": 0,
-    "category": "Slimme modules"
+    "category": "Slimme modules",
+    "required": true
   },
   {
     "description": "AutoAlert",
@@ -45,7 +50,8 @@
     "ohc_time": 7,
     "install_price": 1500,
     "year_price": 0,
-    "category": "Slimme producten"
+    "category": "Slimme producten",
+    "required": true
   },
   {
     "description": "PumpCheck",
@@ -53,7 +59,8 @@
     "ohc_time": 7,
     "install_price": 1500,
     "year_price": 0,
-    "category": "Slimme producten"
+    "category": "Slimme producten",
+    "required": true
   },
   {
     "description": "Portal",
@@ -62,7 +69,8 @@
     "install_price": 375,
     "year_price": 250,
     "billing": "year",
-    "category": "Slimme diensten"
+    "category": "Slimme diensten",
+    "required": true
   },
   {
     "description": "Watch-it",
@@ -71,7 +79,8 @@
     "install_price": 250,
     "year_price": 250,
     "billing": "year",
-    "category": "Slimme diensten"
+    "category": "Slimme diensten",
+    "required": true
   },
   {
     "description": "Snapshot",
@@ -80,7 +89,8 @@
     "install_price": 125,
     "year_price": 125,
     "billing": "year",
-    "category": "Slimme diensten"
+    "category": "Slimme diensten",
+    "required": true
   },
   {
     "description": "Hearbeat 2.0",
@@ -98,7 +108,8 @@
     "install_price": 995,
     "year_price": 995,
     "billing": "year",
-    "category": "Slimme diensten"
+    "category": "Slimme diensten",
+    "required": true
   },
   {
     "description": "OpenVpn",
@@ -107,7 +118,8 @@
     "install_price": 167.50,
     "year_price": 167.50,
     "billing": "year",
-    "category": "Remote verbinding"
+    "category": "Remote verbinding",
+    "required": true
   },
   {
     "description": "Tokheim",
@@ -116,7 +128,8 @@
     "install_price": 0,
     "year_price": 0,
     "billing": null,
-    "category": "Remote verbinding"
+    "category": "Remote verbinding",
+    "required": true
   },
   {
     "description": "4g",
@@ -124,7 +137,8 @@
     "ohc_time": 7,
     "install_price": 0,
     "year_price": 0,
-    "category": "Remote verbinding"
+    "category": "Remote verbinding",
+    "required": true
   },
   {
     "description": "Binnen camera's",
@@ -132,7 +146,8 @@
     "ohc_time": 7,
     "install_price": 0,
     "year_price": 0,
-    "category": "Type camera's"
+    "category": "Type camera's",
+    "required": true
   },
   {
     "description": "Buiten camera's",
@@ -140,7 +155,8 @@
     "ohc_time": 15,
     "install_price": 0,
     "year_price": 0,
-    "category": "Type camera's"
+    "category": "Type camera's",
+    "required": true
   },
   {
     "description": "Monitor",
@@ -148,7 +164,8 @@
     "ohc_time": 3,
     "install_price": 0,
     "year_price": 0,
-    "category": "Monitoren"
+    "category": "Monitoren",
+    "required": true
   },
   {
     "description": "PumpWatch",
@@ -156,7 +173,8 @@
     "ohc_time": 60,
     "install_price": 1995,
     "year_price": 0,
-    "category": "PumpWatch"
+    "category": "PumpWatch",
+    "required": true
   },
   {
     "description": "<20km",
@@ -164,7 +182,8 @@
     "ohc_time": 0,
     "install_price": 49.50,
     "year_price": 0,
-    "category": "Voorrijkosten"
+    "category": "Voorrijkosten",
+    "required": true
   },
   {
     "description": "20 - 60km",
@@ -172,7 +191,8 @@
     "ohc_time": 0,
     "install_price": 98,
     "year_price": 0,
-    "category": "Voorrijkosten"
+    "category": "Voorrijkosten",
+    "required": true
   },
   {
     "description": "60 - 100km",
@@ -180,7 +200,8 @@
     "ohc_time": 0,
     "install_price": 141.50,
     "year_price": 0,
-    "category": "Voorrijkosten"
+    "category": "Voorrijkosten",
+    "required": true
   },
   {
     "description": ">100km",
@@ -188,6 +209,16 @@
     "ohc_time": 0,
     "install_price": 167.50,
     "year_price": 0,
-    "category": "Voorrijkosten"
+    "category": "Voorrijkosten",
+    "required": true
+  },
+  {
+    "description": "Uurloon",
+    "install_time": 0,
+    "ohc_time": 0,
+    "install_price": 60.25,
+    "year_price": 0,
+    "category": "Installatiekosten",
+    "required": true
   }
 ]
