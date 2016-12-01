@@ -1,6 +1,8 @@
-<div class="content content-ohc">
+<div class="content content-ohc" ng-controller="pdfCtrl">
   <div class="content-table">
-    <h2>Camera's en toebehoren</h2><button ng-click="calcTotalAmountDocument()">klik me</button>
+    <button ng-click="makePdf()" class="btn-bb">Generate PDF</button>
+    <button ng-click="openModal()" class="btn-bb">Open Modal</button>
+    <h2>Camera's en toebehoren</h2>
     <div class="content-block">
       <div class="content-block-title">
         <p>Binnen camera's:</p>

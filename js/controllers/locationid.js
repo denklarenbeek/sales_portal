@@ -6,7 +6,7 @@ app.controller('locationIDCtrl', function($scope, $http, $routeParams, dataServi
   var id = $location.path();
 
   $scope.selectedNav = "customer";
-  $rootScope.selectedNav = "customer";
+  $rootScope.selectedTab = "customer";
 
   //GET the database information
   dataServices.get(id)

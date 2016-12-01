@@ -8,11 +8,26 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
   $scope.typeSmartProducts = [];
   $scope.typeSmartServices = [];
   $scope.typeRemote = [];
+  var list = [
+    {description: 'hallo'},
+    {description: 'doei'},
+    {description: 'dag'}
+  ]
 
   $scope.returnToPage = function() {
     var page = $location.path().substring(0,36);
     $rootScope.selectedTab = 'generalOhc';
     $location.path(page);
+  }
+
+  //list, is the array where to search in
+  //key, is the description you're looking for
+
+  function findObjectKey(list, objectKey, value) {
+    for (var i = 0, iLen = list.length; i<iLen; i++) {
+      var objectIndex = list.findIndex(x => x[objectKey]==value)
+      return objectIndex;
+    };
   }
 
   //function for push the products in the right array
@@ -79,6 +94,7 @@ app.controller('specificOhcController', function($scope, $http, $routeParams, $l
   // GET specific document
   dataServices.get(id).then(function successCallback(response){
     $scope.document = response.data;
+    $rootScope.document = $scope.document;
   }, function errorCallback(error){
     var errorMessage = error.status + ' ' + error.statusText;
     alertMessServices.error(errorMessage)
